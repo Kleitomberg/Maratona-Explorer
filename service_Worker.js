@@ -1,4 +1,4 @@
-var REVELATION_CACHE = 'OBS_2022_06_10_18_00';
+var REVELATION_CACHE = 'OBS_2022_06_10_18_15';
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
