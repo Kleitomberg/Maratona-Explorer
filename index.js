@@ -34,6 +34,7 @@ function fazerPergunta(){
 
     if(inputvalor.value != ""){
         res.style.opacity  = '1'
+        msg.style.opacity  = '0'
     }
 
     if(inputvalor.value == "") {
