@@ -22,12 +22,19 @@
                     <p>Clique em fazer pergunta para que seu destino seja revelado.</p>
                    
                     <div class="botao-input"> 
-                        <input type="text" placeholder="Digite sua pergunta" />
-                        <button class="">Fazer Pergunta</button>
+                        <span id="msg-error"></span>
+                        <input id="minhapergunta" type="text" placeholder="Digite sua pergunta" />
+                        <button id="botaoperguntar" onclick="fazerPergunta()" class="">Fazer Pergunta</button>
                     </div>
+                    <div id="resultado">
+                        <p id="pergunta"> </p>
+                        <h3 id="resposta"></h3>
+                    </div>
+                    
                 </div>
     
             </main>
 
+                <script src="script.js"></script>
         </body>
     </html>

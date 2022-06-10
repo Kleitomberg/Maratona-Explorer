@@ -77,3 +77,35 @@ div.botao-input{
     gap: 10px;    
     width: 100%;
 }
+
+#resposta{
+    margin-top: 10px;
+    font-weight: 400;
+   
+}
+
+div#resultado{
+    transition: opacity 1s;
+}
+
+#pergunta{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 0.6;
+    text-transform: capitalize;
+}
+
+#msg-error{
+    color: red;
+    font-size: 14px;
+    
+}
+
+/*Responsividade*/
+
+@media (min-width: 200px) and (max-width: 425px) {
+    main{
+        padding: 20px;
+    }
+}
