@@ -34,7 +34,6 @@ function fazerPergunta(){
 
     if(inputvalor.value != ""){
         res.style.opacity  = '1'
-
     }
 
     if(inputvalor.value == "") {
@@ -42,6 +41,8 @@ function fazerPergunta(){
         
         return
       }
+
+      btn.setAttribute("disabled", true)
 //gerar valor ramdom
 const totalRespostas = respostas.length
 const aleatorio = Math.floor(Math.random()*totalRespostas)
@@ -58,7 +59,8 @@ inputvalor.value = ""
 
 //resetando
 setTimeout(function() {
-    res.style.opacity  = '0'    
+    res.style.opacity  = '0'  
+    btn.removeAttribute("disabled")   
   }, 3000)
 
     
