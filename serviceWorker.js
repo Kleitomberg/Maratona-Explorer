@@ -10,13 +10,13 @@ self.addEventListener('install', function (event) {
             '/',
             '/index.html',
             '/index.js',
-            '/style.css',
-            '/game.js',
+            '/style.css',            
             //'/service-worker.js',
             '/manifest.json',
-            '/imagens/sheet.png', 
-            '/imagens/icons/icon-192x192.png',
-            '/imagens/icons/icon-512x512.png', 
+            '/favicon.ico',
+            '/assets/icons/icon-192x192.png', 
+            '/assets/icons/icon-512x512.png', 
+            
       ]);
     })
   )
