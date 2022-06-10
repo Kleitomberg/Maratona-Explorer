@@ -1,8 +1,8 @@
-var REVELATION_CACHE = 'OBS_2022_06_10_18_15';
+var REVELATION_CACHE1 = 'OBS_2022_06_10_18_20';
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(REVELATION_CACHE).then(function (cache) {
+    caches.open(REVELATION_CACHE1).then(function (cache) {
       return cache.addAll([
         /*   CUIDADO COM A QUANTIDADE DE ARQUIVOS QUE VOCÊ CACHEIA
              SE UM ARQUIVO FALHAR, VAI TER QUE CACHEAR TUDO DE NOVO
@@ -27,7 +27,7 @@ self.addEventListener('activate', function activator(event) {
     caches.keys().then(function (keys) {
       return Promise.all(keys
         .filter(function (key) {
-          return key.indexOf(REVELATION_CACHE) !== 0;
+          return key.indexOf(REVELATION_CACHE1) !== 0;
         })
         .map(function (key) {
           return caches.delete(key);
