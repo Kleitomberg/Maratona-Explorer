@@ -24,7 +24,7 @@
             if ('serviceWorker' in navigator) {
               // Use the window load event to keep the page load performant
               window.addEventListener('load', () => {
-                  navigator.serviceWorker.register('/service_Worker.js')
+                  navigator.serviceWorker.register('/serviceWorker.js')
                                       .then(function () { console.log('service worker registered'); })
                                       .catch(function (e) { console.warn('service worker failed', e); });
               });
