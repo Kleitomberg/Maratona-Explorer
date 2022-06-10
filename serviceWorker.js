@@ -1,0 +1,46 @@
+var CACHE_NAME = 'OBS_2019_12_14_13_45';
+
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.addAll([
+        /*   DESNECESSÁRIO A QUANTIDADE DE IMAGENS, CUIDADO COM A QUANTIDADE DE ARQUIVOS QUE VOCÊ CACHEIA
+             SE UM ARQUIVO FALHAR, VAI TER QUE CACHEAR TUDO DE NOVO
+        */
+            '/',
+            '/index.html',
+            '/index.js',
+            '/style.css',
+            '/game.js',
+            //'/service-worker.js',
+            '/manifest.json',
+            '/imagens/sheet.png', 
+            '/imagens/icons/icon-192x192.png',
+            '/imagens/icons/icon-512x512.png', 
+      ]);
+    })
+  )
+});
+
+self.addEventListener('activate', function activator(event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(keys
+        .filter(function (key) {
+          return key.indexOf(CACHE_NAME) !== 0;
+        })
+        .map(function (key) {
+          return caches.delete(key);
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (cachedResponse) {
+      return cachedResponse || fetch(event.request);
+    })
+  );
+});
